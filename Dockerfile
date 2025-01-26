@@ -27,7 +27,12 @@ RUN \
     npm cache clean --force
 
 RUN mkdir -p /app/client/public/images /app/api/logs
-
+USER root
+# Install Python and pip
+ENV PYTHONUNBUFFERED=1
+RUN apk add --update --no-cache python3-dev py3-pip && ln -sf python3 /usr/bin/python
+# RUN python3 -m ensurepip    
+RUN pip3 install --no-cache --upgrade  --break-system-packages pip setuptools mcp
 # Node API setup
 EXPOSE 3080
 ENV HOST=0.0.0.0

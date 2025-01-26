@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: LibreChat
+    env: docker
+    dockerfilePath: ./Dockerfile.Librechat
+    disk:
+      name: images
+      mountPath: /app/client/public/images
+      sizeGB: 1
