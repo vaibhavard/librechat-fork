@@ -60,7 +60,7 @@ client/public/main.js.LICENSE.txt
 
 # # Environment
 # .npmrc
-# .env*
+.env*
 # my.secrets
 # !**/.env.example
 # !**/.env.test.example
